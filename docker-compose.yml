@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  miner_1:
+    build: .
+    command: --address "aleo1..." --ws "wss://pool.aleo1.to:32443/"
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['0'] # you can add more ids
+            capabilities: [gpu]
